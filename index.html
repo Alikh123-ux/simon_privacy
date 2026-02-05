@@ -3,73 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simon - Privacy Policy</title>
+    <title>Simon - Your Wake-Up Buddy</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
             color: #333;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+        
+        nav {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        h2 {
-            color: #34495e;
-            margin-top: 30px;
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
         }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+            padding: 0.5rem 1rem;
+        }
+        
+        nav a:hover {
+            opacity: 0.8;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+        
+        .emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 1rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        #privacy, #terms {
+            background: #f8f9fa;
+        }
+        
+        .policy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .policy-content h2 {
+            color: #764ba2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-content h3 {
+            color: #667eea;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
         .last-updated {
             color: #7f8c8d;
             font-style: italic;
+            margin-bottom: 2rem;
         }
-        .contact {
-            background: #ecf0f1;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 30px;
+        
+        .contact-box {
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid #667eea;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                gap: 1rem;
+            }
+            .policy-content {
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Privacy Policy for Simon - Wake Up Alarm</h1>
-    <p class="last-updated">Last Updated: February 5, 2026</p>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+    </nav>
 
-    <h2>Introduction</h2>
-    <p>Simon ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the Simon mobile application.</p>
+    <!-- HOME SECTION -->
+    <section id="home">
+        <div class="hero">
+            <div class="emoji">⏰</div>
+            <h1>Meet Simon</h1>
+            <p>Your Worst Wake-Up Buddy 😈</p>
+            <p style="font-size: 1.1rem;">Because gentle alarms don't work. You need discipline, not comfort.</p>
+        </div>
 
-    <h2>Information We Collect</h2>
-    <p>Simon is designed with privacy in mind. We collect minimal information:</p>
-    <ul>
-        <li><strong>Alarm Settings:</strong> Your alarm times and preferences are stored locally on your device only.</li>
-        <li><strong>Purchase Information:</strong> When you make in-app purchases, Apple processes your payment. We do not have access to your payment details.</li>
-        <li><strong>No Personal Data:</strong> We do not collect, store, or transmit any personal information, contact lists, location data, or usage analytics.</li>
-    </ul>
+        <div class="container" style="padding-top: 4rem;">
+            <h2 style="text-align: center; font-size: 2rem; margin-bottom: 3rem; color: #667eea;">How It Works</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🔔</div>
+                    <h3>9 Progressive Notifications</h3>
+                    <p>Escalating alerts over 15 minutes. Each one more annoying than the last.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Brain Games Required</h3>
+                    <p>Solve 3 random puzzles to prove you're awake. No cheating.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">😏</div>
+                    <h3>Sarcastic Voice</h3>
+                    <p>Simon's custom voice messages keep you accountable and annoyed.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <h3>Available on iOS</h3>
+                    <p>Download from the App Store. iOS 18+ required.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">🔁</div>
+                    <h3>Daily Repeating</h3>
+                    <p>Set once, works every day. Custom day selection available.</p>
+                </div>
+                
+                <div class="feature">
+                    <div class="feature-icon">💪</div>
+                    <h3>Build Discipline</h3>
+                    <p>Not just an alarm. Your accountability partner for life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>How We Use Information</h2>
-    <p>All alarm settings and app preferences are stored locally on your device. We do not have servers that collect or store your data.</p>
+    <!-- PRIVACY POLICY SECTION -->
+    <section id="privacy">
+        <div class="container">
+            <h1 class="section-title">Privacy Policy</h1>
+            
+            <div class="policy-content">
+                <p class="last-updated">Last Updated: February 5, 2026</p>
 
-    <h2>Third-Party Services</h2>
-    <p>Simon uses Apple's StoreKit framework for in-app purchases. Please review <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> for information about how Apple handles purchase data.</p>
+                <h2>Introduction</h2>
+                <p>Simon ("we", "our", or "us") respects your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the Simon mobile application.</p>
 
-    <h2>Data Storage</h2>
-    <p>All data is stored locally on your device using iOS UserDefaults. No data is transmitted to external servers or third parties.</p>
+                <h2>Information We Collect</h2>
+                <p>Simon is designed with privacy in mind. We collect minimal information:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Alarm Settings:</strong> Your alarm times and preferences are stored locally on your device only.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Purchase Information:</strong> When you make in-app purchases, Apple processes your payment. We do not have access to your payment details.</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>No Personal Data:</strong> We do not collect, store, or transmit any personal information, contact lists, location data, or usage analytics.</li>
+                </ul>
 
-    <h2>Children's Privacy</h2>
-    <p>Simon is suitable for users of all ages. We do not knowingly collect personal information from children.</p>
+                <h2>How We Use Information</h2>
+                <p>All alarm settings and app preferences are stored locally on your device using iOS UserDefaults. We do not have servers that collect or store your data.</p>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date.</p>
+                <h2>Third-Party Services</h2>
+                <p>Simon uses Apple's StoreKit framework for in-app purchases. Please review <a href="https://www.apple.com/legal/privacy/" style="color: #667eea;">Apple's Privacy Policy</a> for information about how Apple handles purchase data.</p>
 
-    <h2>Your Rights</h2>
-    <p>Since all data is stored locally on your device, you have complete control. You can delete all app data by uninstalling the app.</p>
+                <h2>Data Storage</h2>
+                <p>All data is stored locally on your device. No data is transmitted to external servers or third parties. You have complete control over your data.</p>
 
-    <div class="contact">
-        <h2>Contact Us</h2>
-        <p>If you have questions about this Privacy Policy, please comment and share your feedback</p>
-    </div>
+                <h2>Children's Privacy</h2>
+                <p>Simon is suitable for users of all ages. We do not knowingly collect personal information from children under 13.</p>
+
+                <h2>Your Rights</h2>
+                <p>Since all data is stored locally on your device, you have complete control. You can delete all app data by uninstalling the app from your device.</p>
+
+                <h2>Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date above.</p>
+
+                <div class="contact-box">
+                    <h2 style="margin-top: 0;">Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy, please contact us at:</p>
+                    <p style="margin-top: 1rem;"><strong>Email:</strong> support@simonalarm.app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMS OF SERVICE SECTION -->
+    <section id="terms">
+        <div class="container">
+            <h1 class="section-title">Terms of Service</h1>
+            
+            <div class="policy-content">
+                <p class="last-updated">Last Updated: February 5, 2026</p>
+
+                <h2>1. Acceptance of Terms</h2>
+                <p>By downloading, installing, or using the Simon mobile application ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the App.</p>
+
+                <h2>2. Description of Service</h2>
+                <p>Simon is an alarm clock application designed to help users wake up through progressive notifications and brain game challenges. The App requires iOS 18 or later.</p>
+
+                <h2>3. Subscriptions and Purchases</h2>
+                <h3>3.1 Free Trial</h3>
+                <p>New users may be offered a 3-day free trial. You will not be charged during the trial period. After the trial ends, you will automatically be charged unless you cancel before the trial expires.</p>
+
+                <h3>3.2 Subscription Plans</h3>
+                <p>Simon offers the following subscription options:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;"><strong>Monthly:</strong> $3.99/month, auto-renewable</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Annual:</strong> $12.99/year, auto-renewable</li>
+                    <li style="margin-bottom: 0.5rem;"><strong>Lifetime:</strong> $24.99 one-time purchase</li>
+                </ul>
+
+                <h3>3.3 Billing</h3>
+                <p>All purchases are processed through Apple's App Store. Payment will be charged to your Apple ID account at confirmation of purchase. Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</p>
+
+                <h3>3.4 Cancellation</h3>
+                <p>You can cancel your subscription at any time through your Apple ID account settings. Cancellation takes effect at the end of the current billing period. No refunds will be provided for the unused portion of a subscription period.</p>
+
+                <h2>4. User Conduct</h2>
+                <p>You agree to use the App only for lawful purposes. You agree not to:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                    <li style="margin-bottom: 0.5rem;">Reverse engineer, decompile, or disassemble the App</li>
+                    <li style="margin-bottom: 0.5rem;">Remove or modify any proprietary notices or labels</li>
+                    <li style="margin-bottom: 0.5rem;">Use the App in any way that could damage or impair our services</li>
+                </ul>
+
+                <h2>5. Disclaimer of Warranties</h2>
+                <p>THE APP IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. We do not guarantee that the App will be error-free, uninterrupted, or meet your specific requirements.</p>
+
+                <h2>6. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE APP.</p>
+
+                <h2>7. Health and Safety</h2>
+                <p>While Simon is designed to help you wake up, it should not be your only alarm for critical appointments (medical procedures, flights, important meetings, etc.). Always have a backup alarm for critical situations.</p>
+
+                <h2>8. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms of Service at any time. Continued use of the App after changes constitutes acceptance of the modified terms.</p>
+
+                <h2>9. Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the United States, without regard to conflict of law provisions.</p>
+
+                <h2>10. Apple Requirements</h2>
+                <p>These Terms are between you and Simon only, not with Apple. Apple is not responsible for the App or its content. Apple has no obligation to provide maintenance or support services. In case of failure to conform to warranty, you may notify Apple for a refund, and Apple has no other warranty obligation. Apple is not responsible for addressing claims related to the App or your use of it.</p>
+
+                <div class="contact-box">
+                    <h2 style="margin-top: 0;">Contact Information</h2>
+                    <p>For questions about these Terms of Service, contact us at:</p>
+                    <p style="margin-top: 1rem;"><strong>Email:</strong> support@simonalarm.app</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Simon - Wake Up Alarm. All rights reserved.</p>
+        <p style="margin-top: 1rem;">
+            <a href="#home">Home</a> | 
+            <a href="#privacy">Privacy</a> | 
+            <a href="#terms">Terms</a>
+        </p>
+    </footer>
 </body>
 </html>
